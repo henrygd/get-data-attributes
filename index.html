@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>get-data-attributes</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/combine/npm/modern-normalize@0.7.0/modern-normalize.min.css,npm/prismjs@1.21.0/themes/prism-okaidia.css"
+		/>
+		<style>
+			html {
+				overflow-x: hidden;
+			}
+
+			body {
+				background: #222;
+				overflow-x: hidden;
+				color: #222;
+			}
+
+			.main {
+				padding: 0 5%;
+			}
+
+			.inner-wrap {
+				width: 100%;
+				max-width: 1100px;
+				margin: 40px auto;
+			}
+
+			.content {
+				margin: 0 0 3em;
+				background: #fff;
+				padding: 3em 6%;
+				border-radius: 5px;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+				overflow: hidden;
+			}
+
+			.content > :first-child {
+				margin-top: 0;
+			}
+
+			.content > :last-child {
+				margin-bottom: 0;
+			}
+
+			h1 a {
+				position: relative;
+				top: -5px;
+			}
+
+			img {
+				vertical-align: bottom;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			p {
+				line-height: 1.6;
+				margin: 0 0 5px;
+			}
+
+			.code-block {
+				margin: 1.5em 0 0;
+			}
+
+			@media (max-width: 500px) {
+				*/ .content {
+					padding: 1.5em 5%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="inner-wrap">
+				<div class="content">
+					<h1>
+						get-data-attributes
+						<a
+							href="https://www.npmjs.com/package/get-data-attributes"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src="https://badgen.net/npm/v/get-data-attributes"
+								alt="NPM"
+							/>
+						</a>
+						<a
+							href="https://github.com/henrygd/get-data-attributes"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src="https://badgen.net/badge/icon/github?icon=github&label"
+								alt="View on Github"
+							/>
+						</a>
+						<a
+							href="https://cdn.jsdelivr.net/npm/get-data-attributes/dist/get-data-attributes.iife.js"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img
+								src="https://badgen.net/badgesize/gzip/henrygd/get-data-attributes/master/dist/get-data-attributes.iife.js"
+								alt="CDN link"
+							/>
+						</a>
+					</h1>
+
+					<p>
+						Minimal function that returns an element's data attributes as an
+						object.
+					</p>
+
+					<p>
+						This is logged in console if you want to check it out. Make sure you
+						escape your attributes if they're not extremely simple.
+					</p>
+
+					<div
+						data-example="one"
+						data-my-string="it is a string"
+						data-my-array='["one", true, 3]'
+						data-my-object='{"The Last of Us": 10, "The Last of Us Part II": 10, "10 of 10 games": ["The Last of Us", "The Last of Us Part II"]}'
+					></div>
+					<div class="code-block">
+						<pre>
+<code class="language-html"></code>
+</pre>
+						<pre>
+<code class="language-js"></code>
+</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="dist/get-data-attributes.iife.js"></script>
+
+		<script>
+			let examples = document.querySelectorAll('[data-example]')
+			let codeBlocks = document.querySelectorAll('.code-block')
+
+			for (let i = 0; i < examples.length; i++) {
+				const el = examples[i]
+				const codeBlock = codeBlocks[i]
+				const data = getDataAttributes(el)
+				console.log('element', el)
+				console.log('data', data)
+				codeBlock.children[0].children[0].textContent = el.outerHTML
+				codeBlock.children[1].children[0].textContent = JSON.stringify(
+					data,
+					null,
+					2
+				)
+			}
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/prism.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t=t||self).getDataAttributes=e()}(this,function(){return getDataAttributes=function(t){return Object.keys(t.dataset).reduce(function(e,n){var r=t.dataset[n];try{e[n]=JSON.parse(r)}catch(t){e[n]=r}return e},{})}});
