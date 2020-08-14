@@ -1,0 +1,35 @@
+{
+	"name": "get-data-attributes",
+	"version": "1.0.0",
+	"source": "index.js",
+	"main": "dist/get-data-attributes.js",
+	"module": "dist/get-data-attributes.module.js",
+	"umd:main": "dist/get-data-attributes.umd.js",
+	"description": "Minimal function that returns an element's data attributes as an object",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/henrygd/get-data-attributes.git"
+	},
+	"scripts": {
+		"start": "run-p dev serve",
+		"build": "microbundle --sourcemap false",
+		"dev": "microbundle watch -i index.js -o dist/get-data-attributes.iife.js --no-pkg-main -f iife --sourcemap false",
+		"serve": "live-server . --ignore=index.js",
+		"deploy": "gh-pages -d .",
+		"release": "release-it"
+	},
+	"release-it": {
+		"hooks": {
+			"after:bump": "npm run build",
+			"after:release": "npm run deploy"
+		}
+	},
+	"dependencies": {
+		"gh-pages": "^3.1.0",
+		"live-server": "^1.2.1",
+		"microbundle": "^0.12.3",
+		"npm-run-all": "^4.1.5",
+		"release-it": "^13.6.6"
+	}
+}
