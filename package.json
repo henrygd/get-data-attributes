@@ -1,6 +1,6 @@
 {
 	"name": "get-data-attributes",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"source": "index.js",
 	"main": "dist/get-data-attributes.js",
 	"module": "dist/get-data-attributes.module.js",
