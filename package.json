@@ -1,6 +1,6 @@
 {
 	"name": "get-data-attributes",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"source": "index.js",
 	"main": "dist/get-data-attributes.js",
 	"module": "dist/get-data-attributes.module.js",
@@ -25,7 +25,7 @@
 			"after:release": "npm run deploy"
 		}
 	},
-	"dependencies": {
+	"devDependencies": {
 		"gh-pages": "^3.1.0",
 		"live-server": "^1.2.1",
 		"microbundle": "^0.12.3",
